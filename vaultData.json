@@ -1,16 +1,1 @@
-[
-     {
-          "Id": 1,
-          "Name": "UV interprises",
-          "Item": "Computers(Prebuilt-Dell)",
-          "Bill": 5000.0,
-          "Date": "9.11.2026"
-     },
-     {
-          "Id": 2,
-          "Name": "UV co.",
-          "Item": "Solar panels",
-          "Bill": 10000.0,
-          "Date": "8.11.2026"
-     }
-]
+
