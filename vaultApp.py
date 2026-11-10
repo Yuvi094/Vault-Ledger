@@ -5,6 +5,7 @@ from rich.console import Console
 from rich.panel  import Panel
 from rich import print
 from rich.prompt import Prompt, Confirm, IntPrompt, FloatPrompt
+from rich.align import Align
 console = Console()
 vault_data =[]
 isSaved = False
@@ -28,11 +29,13 @@ def add_data(data_list):
     item_name = Prompt.ask("Enter the item name: ")
     while True:
         try:
-            bill = FloatPrompt.ask(input("Enter the bill amount: "))
+            bill = FloatPrompt.ask("Enter the bill amount: ")
             break
         except ValueError:
             print("[red]Invalid Input[/red] ")
-            next_id = max([entry["Id"] for entry in data_list], default=0) + 1
+    global next_id    
+    next_id = max([entry["Id"] for entry in data_list], default=0) + 1
+            
     date = input("Enter the date of sale: ")
     entry = {
         "Id": next_id,
@@ -67,7 +70,7 @@ def view_data(data_list):
 vault_data = load_data()
 
 while True:
-   console.print(Panel("WELCOME", align="center" ,title="Vault ledger", style="bold"))
+   console.print((Panel(Align.center("WELCOME") ,title="Vault ledger", style="bold")))
    print("1 to append data")
    print("2 to view data ")
    print("3 to save data ")
